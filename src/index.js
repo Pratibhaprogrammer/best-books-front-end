@@ -7,7 +7,10 @@ ReactDOM.render(
   <Auth0Provider
     domain="simoneodegard.us.auth0.com"
     clientId="qKaxiCcf5HmwBG3azh0Z95EfW3IVbjWV"
-    redirectUri='http://localhost:3000'
+    //local
+    // redirectUri='http://localhost:3000'
+    //netlify
+    redirectUri='https://wonderful-spence-eaf6a6.netlify.app/'
 >
   <App />
 </Auth0Provider>,
