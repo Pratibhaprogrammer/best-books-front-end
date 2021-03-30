@@ -8,9 +8,9 @@ import {
   Route
 } from "react-router-dom";
 import { withAuth0 }from '@auth0/auth0-react';
-import LogoutButton from './LogoutButton';
+// import LogoutButton from './LogoutButton';
 import MyFavoriteBooks from './MyFavoriteBooks';
-import Profile from'./Profile';
+// import Profile from'./Profile';
 import Login from './Login';
 
 class App extends React.Component {
