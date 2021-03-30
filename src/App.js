@@ -7,6 +7,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { withAuth0 }from '@auth0/auth0-react';
+// import LogoutButton from './LogoutButton';
+import MyFavoriteBooks from './MyFavoriteBooks';
+// import Profile from'./Profile';
+import Login from './Login';
 
 class App extends React.Component {
 
@@ -19,7 +24,22 @@ class App extends React.Component {
             <Header />
               <Switch>
                 <Route exact path="/">
-                  {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
+                  <Login/>
+  
+                  {this.props.auth0.isAuthenticated && 
+                    
+                      <MyFavoriteBooks/>
+                    
+                  }
+                </Route>
+                <Route exact path="/Profile">
+                  {/* <LoginButton/>
+                  <LogoutButton/>
+                  {this.props.auth0.isAuthenticated && 
+                    
+                      <Profile/>
+                    
+                  } */}
                 </Route>
                 {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
               </Switch>
@@ -31,4 +51,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);
