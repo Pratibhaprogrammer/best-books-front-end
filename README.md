@@ -26,18 +26,18 @@
 **Driver:** Jacob
 **Navigator:** Simone
 **Estimate of time needed to complete:** 3 hrs
-**Start time:** 3:40  
+**Start time:** 3:40pm 
 **Switch time** 6:20pm
 **Driver:** Simone
 **Navigator:** Jacob
 **Finish time:** 7:03pm
 **Actual time needed to complete:** 3 hrs 20 min
 
-**Name of feature:**
-**Driver:**
-**Navigator:**
-**Estimate of time needed to complete:**
-**Start time:**
+**Name of feature:** Book Component
+**Driver:** Jacob
+**Navigator:** Simone
+**Estimate of time needed to complete:** 2hrs
+**Start time:** 2:55pm
 **Finish time:**
 **Actual time needed to complete:**
 
