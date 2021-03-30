@@ -20,11 +20,11 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-**Name of feature:**
-**Driver:**
-**Navigator:**
-**Estimate of time needed to complete:**
-**Start time:**
+**Name of feature:** AUTH0
+**Driver:** Jacob
+**Navigator:** Simone
+**Estimate of time needed to complete:** 3 hrs
+**Start time:** 3:40  
 **Finish time:**
 **Actual time needed to complete:**
 
