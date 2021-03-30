@@ -7,42 +7,33 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { withAuth0 }from '@auth0/auth0-react';
-// import LogoutButton from './LogoutButton';
+import { withAuth0 } from '@auth0/auth0-react';
 import MyFavoriteBooks from './MyFavoriteBooks';
-// import Profile from'./Profile';
+import Profile from'./Profile';
 import Login from './Login';
 
 class App extends React.Component {
 
   render() {
     console.log('app', this.props)
-    return(
+    return (
       <>
         <Router>
           <IsLoadingAndError>
             <Header />
-              <Switch>
-                <Route exact path="/">
-                  <Login/>
-  
-                  {this.props.auth0.isAuthenticated && 
-                    
-                      <MyFavoriteBooks/>
-                    
-                  }
-                </Route>
-                <Route exact path="/Profile">
-                  {/* <LoginButton/>
-                  <LogoutButton/>
-                  {this.props.auth0.isAuthenticated && 
-                    
-                      <Profile/>
-                    
-                  } */}
-                </Route>
-                {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
-              </Switch>
+            <Switch>
+              <Route exact path="/">
+                <Login />
+                {this.props.auth0.isAuthenticated &&
+                  <MyFavoriteBooks />
+                }
+              </Route>
+              <Route exact path="/Profile">
+                {this.props.auth0.isAuthenticated &&
+                  <Profile />
+                }
+              </Route>
+            </Switch>
             <Footer />
           </IsLoadingAndError>
         </Router>

@@ -5,8 +5,8 @@ import App from './App';
 
 ReactDOM.render(
   <Auth0Provider
-    domain="dev-zsz22tph.us.auth0.com"
-    clientId="6ZvVQAAsyvKPV5LV8o5gXwFDCidLCW1R"
+    domain="simoneodegard.us.auth0.com"
+    clientId="qKaxiCcf5HmwBG3azh0Z95EfW3IVbjWV"
     redirectUri='http://localhost:3000'
 >
   <App />

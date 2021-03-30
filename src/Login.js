@@ -9,9 +9,6 @@ class Login extends React.Component {
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>Log In</Card.Title>
-          <Card.Text>
-            Click Below to Log In
-          </Card.Text>
           <LoginButton/>
         </Card.Body>
       </Card>

@@ -16,6 +16,8 @@
 ## Change Log
 - 3-29 2021 3:00pm: Simone added starter code, read me, git ignore, .env, 
 - 3-29 2021 3:20pm: Jacob Deployed to netlify
+- 3-29 2021 6:20pm: Jacob added Auth0 to App, index, Login, LoginButton, LogoutButton, MyFavoriteBooks, Profiles
+- 3-29 2021 7:00pm: Simone added LogoutButton to header, added/fixed logic for App
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -25,8 +27,11 @@
 **Navigator:** Simone
 **Estimate of time needed to complete:** 3 hrs
 **Start time:** 3:40  
-**Finish time:**
-**Actual time needed to complete:**
+**Switch time** 6:20pm
+**Driver:** Simone
+**Navigator:** Jacob
+**Finish time:** 7:03pm
+**Actual time needed to complete:** 3 hrs 20 min
 
 **Name of feature:**
 **Driver:**
