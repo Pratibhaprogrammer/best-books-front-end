@@ -6,12 +6,16 @@ import LoginButton from './LoginButton';
 class Login extends React.Component {
   render() {
     return(
-      <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>Log In</Card.Title>
-          <LoginButton/>
-        </Card.Body>
-      </Card>
+      <>
+        <center>
+          <Card style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title>Log In</Card.Title>
+              <LoginButton/>
+            </Card.Body>
+          </Card>
+        </center>
+      </>
     )
   }
 }

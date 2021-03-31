@@ -13,9 +13,9 @@ class Books extends React.Component {
   componentDidMount = async () => {
     try {
       console.log('email', this.props.auth0.user.email);
-      const SERVER = 'http://localhost:3002';
+      const SERVER = 'http://localhost:3001';
       const books = await axios.get(`${SERVER}/books`, { params: { email: this.props.auth0.user.email } });
-      console.log(books);
+      console.log(books.data);
       console.log(this.email);
   
       this.setState({ books: books.data })
