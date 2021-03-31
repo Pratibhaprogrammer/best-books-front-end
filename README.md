@@ -2,7 +2,7 @@
 - https://wonderful-spence-eaf6a6.netlify.app
 
 **Author**: Jacob Holmer, Simone Odegard
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 2.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -18,6 +18,7 @@
 - 3-29 2021 3:20pm: Jacob Deployed to netlify
 - 3-29 2021 6:20pm: Jacob added Auth0 to App, index, Login, LoginButton, LogoutButton, MyFavoriteBooks, Profiles
 - 3-29 2021 7:00pm: Simone added LogoutButton to header, added/fixed logic for App
+- 3-30 2021 3:40pm added carousel
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -38,8 +39,16 @@
 **Navigator:** Simone
 **Estimate of time needed to complete:** 2hrs
 **Start time:** 2:55pm
-**Finish time:**
-**Actual time needed to complete:**
+**Finish time:** 7:00pm
+**Actual time needed to complete:** 4hrs
+
+**Name of feature:** Carousel
+**Driver:** Jacob
+**Navigator:** Simone
+**Estimate of time needed to complete:** 15min
+**Start time:** 1:30pm
+**Finish time:** 3:40pm
+**Actual time needed to complete:** 2hrs
 
 ## Logistical
 - What hours will you be available to communicate?: 9a-6p, open to responses past 6p if there’s an emergency

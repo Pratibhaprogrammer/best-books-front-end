@@ -25,21 +25,6 @@ class App extends React.Component {
   }
 
 
-
-  // getBooks = async (e) => {
-  //   e.preventDefault();
-  //   console.log(this.state.email);
-  //   try{
-  //     const SERVER = 'http://localhost:3001';
-  //     const books = await axios.get(`${SERVER}/books`, {params: {email: this.state.email}});
-
-  //     console.log(this.email);
-
-  //     this.setState({ books: books.data})
-  //   }catch(error){
-  //     console.error(error);
-  //   }
-
   render() {
     console.log('app', this.props);
     return (
