@@ -27,12 +27,12 @@ class Books extends React.Component {
   render() {
     return (
       <>
-      <h2>here are your books</h2>
-        {this.props.books.map((books, i) => (
+      <h2>Favorite Books</h2>
+        {this.state.books.map((books, i) => (
           <div key={i}>
-            {books.name}
-            {books.description}
-            {books.status}
+            <h3>{books.name}</h3>
+            <p>{books.description}</p>
+            <p>{books.status}</p>
           </div>
         ))}
       </>
