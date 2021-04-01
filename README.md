@@ -18,7 +18,8 @@
 - 3-29 2021 3:20pm: Jacob Deployed to netlify
 - 3-29 2021 6:20pm: Jacob added Auth0 to App, index, Login, LoginButton, LogoutButton, MyFavoriteBooks, Profiles
 - 3-29 2021 7:00pm: Simone added LogoutButton to header, added/fixed logic for App
-- 3-30 2021 3:40pm added carousel
+- 3-31 2021 3:40pm added carousel
+- 4-1 2021 10:50am Got modal working and hid login
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -49,6 +50,14 @@
 **Start time:** 1:30pm
 **Finish time:** 3:40pm
 **Actual time needed to complete:** 2hrs
+
+**Name of feature:** Modal and login
+**Driver:** Simone
+**Navigator:** Class
+**Estimate of time needed to complete:** 1 hour
+**Start time:** 10:02pm
+**Finish time:** 10:50pm
+**Actual time needed to complete:** 50 minutes
 
 ## Logistical
 - What hours will you be available to communicate?: 9a-6p, open to responses past 6p if there’s an emergency
