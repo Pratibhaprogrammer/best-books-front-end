@@ -3,8 +3,6 @@ import React from 'react';
 class AddBook extends React.Component {
 
 
-  // popOut = () => {
-  //   this.props.displayAsModal(this.props.index);
 
   render () {
     return(
@@ -14,9 +12,7 @@ class AddBook extends React.Component {
         </form> */}
 
         <button 
-          // onClick={popOut}
-          // show={this.state.displayModal}
-          // handleClose={this.handleClose}
+          onClick={() => this.props.displayAsModal()}
         >Add Book</button>
       </>
     )

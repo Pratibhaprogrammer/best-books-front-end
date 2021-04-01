@@ -21,16 +21,16 @@ class App extends React.Component {
     this.state = {
       books: [],
       email: '',
-      displayModal: 'false'
+      displayModal: false
     }
   }
 
-  displayAsModal = (index) => {
-    this.setState ({displayModal: 'true'});
+  displayAsModal = () => {
+    this.setState ({displayModal: true});
   }
 
   handleClose = () => {
-    this.setState ({displayModal: 'false'});
+    this.setState ({displayModal: false});
   }
 
 
@@ -45,8 +45,8 @@ class App extends React.Component {
           />
           <Switch>
             <Route exact path="/">
-              <Login />
-              {this.props.auth0.isAuthenticated &&
+              {!this.props.auth0.isAuthenticated ? 
+              <Login /> :
                 <>
                   <MyFavoriteBooks />
                   <Books books={this.state.books} />
