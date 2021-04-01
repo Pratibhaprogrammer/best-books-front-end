@@ -12,16 +12,25 @@ import MyFavoriteBooks from './MyFavoriteBooks';
 import Profile from './Profile';
 import Login from './Login';
 import Books from './BestBooks';
-// import axios from 'axios';
-
+import AddBook from './AddBook';
+import BookFormModal from './BookFormModal';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       books: [],
-      email: ''
+      email: '',
+      displayModal: 'false'
     }
+  }
+
+  displayAsModal = (index) => {
+    this.setState ({displayModal: 'true'});
+  }
+
+  handleClose = () => {
+    this.setState ({displayModal: 'false'});
   }
 
 
@@ -41,6 +50,13 @@ class App extends React.Component {
                 <>
                   <MyFavoriteBooks />
                   <Books books={this.state.books} />
+                  <AddBook 
+                  displayAsModal={this.displayAsModal}
+                  />
+                  <BookFormModal 
+                  show={this.state.displayModal}
+                  handleClose={this.handleClose}
+                  />
                 </>
               }
             </Route>
