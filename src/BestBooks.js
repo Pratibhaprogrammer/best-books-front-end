@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+
 class Books extends React.Component {
   constructor(props) {
     super(props);
