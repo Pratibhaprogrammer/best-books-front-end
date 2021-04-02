@@ -7,7 +7,7 @@ class Books extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: [],
+      // books: [],
       email: '',
     }
   }
@@ -22,9 +22,9 @@ class Books extends React.Component {
       const SERVER = 'http://localhost:3001';
       const books = await axios.get(`${SERVER}/books`, { params: { email: this.props.auth0.user.email } });
       console.log(books.data);
-      console.log(this.email);
+      console.log(this.state.email);
 
-      this.setState({ books: books.data })
+      this.props.handleUpdateBooks(books.data)
     } catch (error) {
       console.error(error);
     }
@@ -34,9 +34,9 @@ class Books extends React.Component {
     return (
       <>
         <h2>Favorite Books</h2>
-        {this.state.books.length > 0 &&
+        {this.props.books.length > 0 &&
           <Carousel style={{ minHeight: "8rem" }}>
-            {this.state.books.map((books, i) => (
+            {this.props.books.map((books, i) => (
               <Carousel.Item key={i}>
                 <img
                   className="d-block w-100"
