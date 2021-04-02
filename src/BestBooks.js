@@ -8,10 +8,15 @@ class Books extends React.Component {
     super(props);
     this.state = {
       books: [],
-      email: ''
+      email: '',
     }
   }
-  componentDidMount = async () => {
+  
+  componentDidMount = () => {
+    this.getBooks();
+  }
+
+  getBooks = async () => {
     try {
       console.log('email', this.props.auth0.user.email);
       const SERVER = 'http://localhost:3001';
@@ -23,7 +28,6 @@ class Books extends React.Component {
     } catch (error) {
       console.error(error);
     }
-    // updateEmail = (userEmail) => this.setState({ email: userEmail });
   }
   render() {
     console.log(this.state)

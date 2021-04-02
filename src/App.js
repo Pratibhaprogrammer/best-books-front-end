@@ -14,6 +14,7 @@ import Login from './Login';
 import Books from './BestBooks';
 import AddBook from './AddBook';
 import BookFormModal from './BookFormModal';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,9 +22,16 @@ class App extends React.Component {
     this.state = {
       books: [],
       email: '',
-      displayModal: false
+      displayModal: false,
+      booksName: '',
+      description: '',
+      status: ''
     }
   }
+
+  updateBooks = (booksName) => this.setState({ booksName });
+  updateDescription = (description) => this.setState({ description });
+  updateStatus = (status) => this.setState({ status });
 
   displayAsModal = () => {
     this.setState ({displayModal: true});
@@ -32,6 +40,24 @@ class App extends React.Component {
   handleClose = () => {
     this.setState ({displayModal: false});
   }
+
+  deleteItem = async (index) => {
+    const SERVER = 'http://localhost:3001';
+    const books = await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.state.auth0.user.email}});
+    const newBookArray = this.state.books.filter((book, i)=>{
+      return index !== i;
+    });
+    this.setState({ books: newBookArray });
+  }
+
+  createABook = async (e) => {
+    e.preventDefault();
+    console.log(this.props.auth0.user);
+    const SERVER = 'http://localhost:3001';
+    const books = await axios.post(`${SERVER}/books`, { booksName: this.state.booksName, description: this.state.description, status: this.state.status, email: this.props.auth0.user.email }); //took out user and email
+    this.setState({ books: books.data });
+  }
+
 
 
   render() {
@@ -54,8 +80,12 @@ class App extends React.Component {
                   displayAsModal={this.displayAsModal}
                   />
                   <BookFormModal 
+                  createABook={this.createABook}
+                  updateBooks={this.updateBooks}
                   show={this.state.displayModal}
                   handleClose={this.handleClose}
+                  updateDescription={this.updateDescription}
+                  updateStatus={this.updateStatus}
                   />
                 </>
               }
