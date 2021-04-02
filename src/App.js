@@ -45,7 +45,7 @@ class App extends React.Component {
 
   deleteItem = async (index) => {
     const SERVER = 'http://localhost:3001';
-    const books = await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.state.auth0.user.email}});
+     await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.state.auth0.user.email}});
     const newBookArray = this.state.books.filter((book, i)=>{
       return index !== i;
     });
