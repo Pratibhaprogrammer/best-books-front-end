@@ -16,6 +16,7 @@ import AddBook from './AddBook';
 import BookFormModal from './BookFormModal';
 import axios from 'axios';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,8 @@ class App extends React.Component {
       displayModal: false,
       booksName: '',
       description: '',
-      status: ''
+      status: '',
+      index: null
     }
   }
 
@@ -45,7 +47,8 @@ class App extends React.Component {
 
   deleteItem = async (index) => {
     const SERVER = 'http://localhost:3001';
-     await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.state.auth0.user.email}});
+    const deleteBook = await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.props.auth0.user.email}});
+    console.log('inside deleteItem', deleteBook);
     const newBookArray = this.state.books.filter((book, i)=>{
       return index !== i;
     });
@@ -78,7 +81,9 @@ class App extends React.Component {
                 <>
                   <MyFavoriteBooks />
                   <Books books={this.state.books} 
-                  handleUpdateBooks={this.handleUpdateBooks}/>
+                  handleUpdateBooks={this.handleUpdateBooks}
+                  deleteItem={this.deleteItem}
+                  />
                   <AddBook 
                   displayAsModal={this.displayAsModal}
                   />
