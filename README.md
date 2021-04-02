@@ -21,6 +21,8 @@
 - 3-31 2021 3:40pm added carousel
 - 4-1 2021 10:50am Got modal working and hid login
 - 4-1 2021 6:15pm CreateABook works!
+- 4-1 2021 8:30pm Added delete button
+
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
@@ -66,6 +68,14 @@
 **Start time:** 1:30pm
 **Finish time:** 6:15pm
 **Actual time needed to complete:** 4hrs 45min 
+
+**Name of feature:** Delete button
+**Driver:** Simone
+**Navigator:** Jacob
+**Estimate of time needed to complete:** 2 hours
+**Start time:** 6:15pm
+**Finish time:** 8:30pm
+**Actual time needed to complete:** 2 hours 15min
 
 
 ## Logistical
