@@ -15,6 +15,7 @@ import Books from './BestBooks';
 import AddBook from './AddBook';
 import BookFormModal from './BookFormModal';
 import axios from 'axios';
+// import UpdateForm from './UpdateForm';
 
 
 class App extends React.Component {
@@ -64,6 +65,23 @@ class App extends React.Component {
     console.log('look here', books.data);
   }
 
+  displayUpdateForm = (index) => {
+    const chosenBooks = this.state.books[index];
+    this.setState({ chosenBooks, indexOfChosenBooks: index });
+
+    this.setState({ displayUpdateForm: true });
+  }
+
+  replaceABook = async(e) => {
+    e.preventDefault()
+    const SERVER = 'http://localhost:3001';
+    const book = { name: this.state.booksName }
+    this.state.books.splice(this.state.indexOfChosenBooks, 1, book);
+
+    const updatedBookArray = await axios.put(`${SERVER}/books/${this.state.indexOfChosenBooks}`, {email: this.state.email, booksName: this.state.booksName});
+
+    this.setState({ books: updatedBookArray.data});
+  }
 
 
   render() {
@@ -87,6 +105,11 @@ class App extends React.Component {
                   <AddBook 
                   displayAsModal={this.displayAsModal}
                   />
+                  {/* <UpdateForm 
+                  chosenBooks={this.state.chosenBooks}
+                  updateBooks={this.updateBooks}
+                  replaceABook={this.replaceABook}
+                  /> */}
                   <BookFormModal 
                   createABook={this.createABook}
                   updateBooks={this.updateBooks}
