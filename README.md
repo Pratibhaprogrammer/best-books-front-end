@@ -20,7 +20,7 @@
 - 3-29 2021 7:00pm: Simone added LogoutButton to header, added/fixed logic for App
 - 3-31 2021 3:40pm added carousel
 - 4-1 2021 10:50am Got modal working and hid login
-
+- 4-1 2021 6:15pm CreateABook works!
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
@@ -58,6 +58,15 @@
 **Start time:** 10:02pm
 **Finish time:** 10:50pm
 **Actual time needed to complete:** 50 minutes
+
+**Name of feature:** Create new book
+**Driver:** Jacob
+**Navigator:** Simone
+**Estimate of time needed to complete:** 1 hour
+**Start time:** 1:30pm
+**Finish time:** 6:15pm
+**Actual time needed to complete:** 4hrs 45min 
+
 
 ## Logistical
 - What hours will you be available to communicate?: 9a-6p, open to responses past 6p if there’s an emergency

@@ -33,6 +33,8 @@ class App extends React.Component {
   updateDescription = (description) => this.setState({ description });
   updateStatus = (status) => this.setState({ status });
 
+  handleUpdateBooks  = (books)=> this.setState({ books })
+
   displayAsModal = () => {
     this.setState ({displayModal: true});
   }
@@ -52,16 +54,16 @@ class App extends React.Component {
 
   createABook = async (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user);
+    console.log(this.props.auth0.user.email);
     const SERVER = 'http://localhost:3001';
     const books = await axios.post(`${SERVER}/books`, { booksName: this.state.booksName, description: this.state.description, status: this.state.status, email: this.props.auth0.user.email }); //took out user and email
     this.setState({ books: books.data });
+    console.log('look here', books.data);
   }
 
 
 
   render() {
-    console.log('app', this.props);
     return (
       <>
         <Router>
@@ -75,7 +77,8 @@ class App extends React.Component {
               <Login /> :
                 <>
                   <MyFavoriteBooks />
-                  <Books books={this.state.books} />
+                  <Books books={this.state.books} 
+                  handleUpdateBooks={this.handleUpdateBooks}/>
                   <AddBook 
                   displayAsModal={this.displayAsModal}
                   />
