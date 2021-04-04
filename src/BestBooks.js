@@ -3,6 +3,7 @@ import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
+import UpdateForm from './UpdateForm';
 
 class Books extends React.Component {
   constructor(props) {
@@ -53,7 +54,13 @@ class Books extends React.Component {
                   <Button onClick={() => this.props.deleteItem(i)}>
                     Delete
                   </Button>
-
+                  <UpdateForm
+                    index={this.props.index}
+                    chosenBooks={this.props.chosenBooks}
+                    updateBooks={this.props.updateBooks}
+                    replaceABook={this.props.replaceABook}
+                    displayUpdateForm={this.props.displayUpdateForm}
+                  />
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
