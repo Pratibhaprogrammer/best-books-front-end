@@ -1,14 +1,22 @@
-// import React from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
-// class UpdateForm extends React.Component {
+class UpdateForm extends React.Component {
 
-//   render() {
-//     return (
-//       <form onSubmit={(e) => this.props.replaceABook(e)}>
-//         <input onChange={(e) => this.props.updateBooks(e.target.value)} placeholder={this.props.chosenBooks.name}></input>
-//       </form>
-//     )
-//   }
-// }
 
-// export default UpdateForm;
+  render() {
+    console.log(this.props.chosenBooks)
+    return (
+      
+      <form onSubmit={(e) => this.props.replaceABook(e)}>
+         <label>Description</label>
+        <input onChange={(e) => this.props.updateDescription(e.target.value)} placeholder={this.props.chosenBooks}></input>
+        <Button type="submit">Update Item</Button>
+      </form>
+      
+    )
+  }
+}
+
+export default UpdateForm;

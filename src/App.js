@@ -15,7 +15,7 @@ import Books from './BestBooks';
 import AddBook from './AddBook';
 import BookFormModal from './BookFormModal';
 import axios from 'axios';
-// import UpdateForm from './UpdateForm';
+
 
 
 class App extends React.Component {
@@ -28,7 +28,10 @@ class App extends React.Component {
       booksName: '',
       description: '',
       status: '',
-      index: null
+      index: null,
+      chosenBooks: {},
+      indexOfChosenBooks: -1,
+      displayUpdateForm: false
     }
   }
 
@@ -36,21 +39,21 @@ class App extends React.Component {
   updateDescription = (description) => this.setState({ description });
   updateStatus = (status) => this.setState({ status });
 
-  handleUpdateBooks  = (books)=> this.setState({ books })
+  handleUpdateBooks = (books) => this.setState({ books })
 
   displayAsModal = () => {
-    this.setState ({displayModal: true});
+    this.setState({ displayModal: true });
   }
 
   handleClose = () => {
-    this.setState ({displayModal: false});
+    this.setState({ displayModal: false });
   }
 
   deleteItem = async (index) => {
     const SERVER = 'http://localhost:3001';
-    const deleteBook = await axios.delete(`${SERVER}/books/${index}`, {params: {email: this.props.auth0.user.email}});
+    const deleteBook = await axios.delete(`${SERVER}/books/${index}`, { params: { email: this.props.auth0.user.email } });
     console.log('inside deleteItem', deleteBook);
-    const newBookArray = this.state.books.filter((book, i)=>{
+    const newBookArray = this.state.books.filter((book, i) => {
       return index !== i;
     });
     this.setState({ books: newBookArray });
@@ -72,15 +75,15 @@ class App extends React.Component {
     this.setState({ displayUpdateForm: true });
   }
 
-  replaceABook = async(e) => {
+  replaceABook = async (e) => {
     e.preventDefault()
     const SERVER = 'http://localhost:3001';
-    const book = { name: this.state.booksName }
+    const book = { description: this.state.description }
     this.state.books.splice(this.state.indexOfChosenBooks, 1, book);
 
-    const updatedBookArray = await axios.put(`${SERVER}/books/${this.state.indexOfChosenBooks}`, {email: this.state.email, booksName: this.state.booksName});
+    const updatedBookArray = await axios.put(`${SERVER}/books/${this.state.indexOfChosenBooks}`, { email: this.state.email, description: this.state.description });
 
-    this.setState({ books: updatedBookArray.data});
+    this.setState({ books: updatedBookArray.data });
   }
 
 
@@ -94,30 +97,30 @@ class App extends React.Component {
           />
           <Switch>
             <Route exact path="/">
-              {!this.props.auth0.isAuthenticated ? 
-              <Login /> :
+              {!this.props.auth0.isAuthenticated ?
+                <Login /> :
                 <>
                   <MyFavoriteBooks />
-                  <Books books={this.state.books} 
-                  handleUpdateBooks={this.handleUpdateBooks}
-                  deleteItem={this.deleteItem}
+                  <Books books={this.state.books}
+                    handleUpdateBooks={this.handleUpdateBooks}
+                    deleteItem={this.deleteItem}
                   />
-                  <AddBook 
-                  displayAsModal={this.displayAsModal}
+                  <AddBook
+                    displayAsModal={this.displayAsModal}
                   />
-                  {/* <UpdateForm 
-                  chosenBooks={this.state.chosenBooks}
-                  updateBooks={this.updateBooks}
-                  replaceABook={this.replaceABook}
+                  <BookFormModal
+                    createABook={this.createABook}
+                    updateBooks={this.updateBooks}
+                    show={this.state.displayModal}
+                    handleClose={this.handleClose}
+                    updateDescription={this.updateDescription}
+                    updateStatus={this.updateStatus}
+                  />
+                  {/* <UpdateForm
+                    chosenBooks={this.state.chosenBooks}
+                    updateBooks={this.updateBooks}
+                    replaceABook={this.replaceABook}
                   /> */}
-                  <BookFormModal 
-                  createABook={this.createABook}
-                  updateBooks={this.updateBooks}
-                  show={this.state.displayModal}
-                  handleClose={this.handleClose}
-                  updateDescription={this.updateDescription}
-                  updateStatus={this.updateStatus}
-                  />
                 </>
               }
             </Route>
